@@ -1,0 +1,52 @@
+<div class="container py-5">
+  <div class="card chat-card shadow-lg border-0 mx-auto">
+
+    <!-- Header -->
+    <div class="chat-header p-3 text-white">
+      <h5 class="mb-1">
+        <i class="bi bi-chat-dots-fill me-2"></i>
+        My Chat
+      </h5>
+      <small>Your conversation space</small>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages p-3">
+
+      @for (msg of messages(); track $index) {
+        <div class="message-bubble mb-3">
+          {{ msg }}
+        </div>
+      } @empty {
+        <p class="text-center text-secondary my-5">
+          <i class="bi bi-chat-square-text fs-2"></i>
+          <br>
+          Start a conversation!
+        </p>
+      }
+
+    </div>
+
+    <!-- Input -->
+    <div class="p-3 bg-light">
+      <div class="input-group">
+        <input
+          #input
+          type="text"
+          class="form-control"
+          placeholder="Type a message..."
+          (keyup.enter)="send(input.value); input.value = ''"
+        />
+
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="send(input.value); input.value = ''">
+          <i class="bi bi-send-fill"></i>
+          Send
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
