@@ -4,10 +4,11 @@ import { Stopwatch } from "./stopwatch/stopwatch";
 import { Quiz } from "./quiz/quiz";
 import { PasswordGenerator } from './password-generator/password-generator';
 import { ChatUi } from './chat-ui/chat-ui';
+import { MiniCart } from './mini-cart/mini-cart';
 
 @Component({
   selector: 'app-root',
-  imports: [Stopwatch, Quiz, PasswordGenerator, ChatUi],
+  imports: [Stopwatch, Quiz, PasswordGenerator, ChatUi, MiniCart],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
